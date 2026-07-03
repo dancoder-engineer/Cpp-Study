@@ -12,8 +12,6 @@ class HighScores {
     return sortedScores;
    }
 
-    
-
    public:
     HighScores(std::vector<int> scores) : scores(scores){};
 

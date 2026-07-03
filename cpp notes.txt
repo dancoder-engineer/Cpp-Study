@@ -211,3 +211,15 @@ std::vector<int> HighScores::top_three() { }
 
 HighScores(std::vector<int> initialScores) : scores(initialScores){};
 initialize with initialScores as the class member variable scores
+
+
+we want a reference, so call the function
+ElectionResult& winner = determine_result(final_count);
+
+declare it as
+ElectionResult& determine_result(std::vector<ElectionResult>& final_count){ }
+
+the thing you'll return is:
+ElectionResult& winning = final_count[0];
+
+tats a reference to final_count[0] that overwrotes final_count[0] whenever you change it
