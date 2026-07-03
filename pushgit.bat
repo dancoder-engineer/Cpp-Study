@@ -1,3 +1,3 @@
 git add .
-git commit -am "Did the election exercise."
+git commit -am "One more small note."
 git push

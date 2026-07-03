@@ -223,3 +223,5 @@ the thing you'll return is:
 ElectionResult& winning = final_count[0];
 
 tats a reference to final_count[0] that overwrotes final_count[0] whenever you change it
+
+best to only copy to reference ewhen you're about to return so you're not overwriting anything
