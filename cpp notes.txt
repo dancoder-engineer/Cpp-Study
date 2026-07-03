@@ -1,0 +1,213 @@
+namespace my_ns {
+    int foo() {
+        return 44;
+    }
+    namespace my_inner_ns {
+        int baz() {
+            return 90;
+        }
+    }
+}
+namespace my_other_ns {
+    int foo() {
+        return -2;
+    }
+}
+
+int myresult{my_ns::foo() + my_other_ns::foo() * my_ns::my_inner_ns::baz()};
+
+
+
+
+
+
+
+
+
+std::string qualification{"awesome"};
+// 1st argument: from the index to the end of the string:
+std::string who_is_awesome = qualification.substr(5);
+// => "me"
+
+// 2nd optional argument for the length:
+std::string material{"haunted books"};
+std::string ghost = material.substr(8, 3);
+// => "boo"
+
+std::string new_release{"apple released a new app!"};
+new_release.find("app");
+// => 0
+new_release.find("e");
+// => 4
+
+int num{92};
+double exponent{0.92e2};
+std::string msg{ std::to_string(num) + " can also be written as " + std::to_string(exponent)};
+// => 92 can also be written as 92.0000000
+
+std::string s = std::format("My name is {} and I am {}.", name, age);
+
+
+cmath::ceil(2.3)
+
+std::string better = (option1 < option2) ? option1 : option2
+
+#include "darts.h"
+#include <cmath>
+
+namespace darts {
+
+sqrt(49)
+pow(7,2)
+
+stringName.reserve(str.length());
+reserving a length for a string so it doesn't get resized
+
+if (words[i] != std::toupper(words[i])) { return false; }
+
+
+on a char:
+std::isalpha(words[i])
+std::toupper(words[i])
+
+
+
+
+
+
+
+
+for (std::size_t i = 0; i < words.length(); i++)
+static_cast<int>(words.length())
+
+
+
+
+
+namespace targets {
+// TODO: Insert the code for the alien class here
+ class Alien{
+    public:
+        int x_coordinate;
+        int y_coordinate;
+    
+    
+    Alien(int x, int y){
+        x_coordinate = x;
+        y_coordinate = y;
+        health = 3;
+    }
+
+    int get_health(){
+        return health;
+    }
+
+    private:
+        int health;
+    
+ };
+}  // namespace targets
+
+
+
+
+        try {
+            int i = stoi(trinum) + 1;
+        }
+        catch(std::invalid_argument&){
+            return 0;
+        }
+
+catch(...){ }
+
+if(!isdigit(trinum[0])) { return 0; } 
+
+while (!trinum.empty())
+
+
+enum class AccountStatus {troll, guest, user, mod};
+
+
+switch(status){
+            case(AccountStatus::mod):
+                return true;
+                break;
+            case(AccountStatus::guest):
+                return true;
+		break;
+            default:
+                return false;
+                break;
+}
+
+
+static_cast<int>(var)
+
+
+
+in .h file, put the WHOLE enum and the WHOLE class, dont even bother declaring it in the cpp
+
+
+
+std::vector<int> ret;
+ret.push_back(5);
+v.insert(v.begin(), 6); //at the beginning
+v.insert(v.begin() + 2, 8); //at index 2
+
+std::string str = std::to_string(num);
+std::array<int, 4> scores
+
+
+better std::vector<int> round_down_scores(std::vector<double>& student_snmcores)
+so you dont copy the whole vector
+
+std::vector<int> zeros(10);      // 10 zeros
+std::vector<int> fives(10, 5);   // 10 fives
+std::vector<char> letters(4, 'A'); // {'A', 'A', 'A', 'A'}
+
+#include <unordered_map>
+
+std::unordered_map<std::string, int> commands = {
+    {"start", 1},
+    {"stop", 2},
+    {"pause", 3}
+};
+
+if (commands.contains(command)) {
+    int value = commands[command];
+    // ...
+}
+
+
+enum class Plants{ grass='G', clover='C', radishes='R', violets='V' };
+kidsPlants[i] = static_cast<Plants>(plantLetters[i]);
+
+
+std::log(value) / std::log(base)
+
+For example:
+
+std::log(27) / std::log(3);   // 3
+std::log(125) / std::log(5);  // 3
+
+
+std::string bits = std::bitset<8>(352).to_string();
+std::string bits = std::bitset<16>(352).to_string();
+
+
+
+std::bitset<8> bits = std::bitset<8>(352);
+bits.test(i) tests the ith bit from the right
+
+
+std::bitset<8> bits;
+bits = std::bitset<8>(352);
+
+std::unordered_set<std::string> theirAllergies;
+theirAllergies.emplace(allergies[i]);
+
+if in another file and declaring class member function, need to do this
+std::vector<int> HighScores::top_three() { }
+
+HighScores(std::vector<int> initialScores) : scores(initialScores){};
+initialize with initialScores as the class member variable scores
