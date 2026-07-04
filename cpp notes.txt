@@ -104,9 +104,15 @@ namespace targets {
 
     private:
         int health;
+        static std::unordered_set<std::string> namesSet;
     
  };
 }  // namespace targets
+
+
+
+static is a variable shared across all instances, between class and main (or in cpp and not header file)
+std::unordered_set<std::string> alien::namesSet;
 
 
 std::string name() const{ }
@@ -269,3 +275,6 @@ an array is already a pointer to the array's address, vector is not an address
 
 rand() % 10
 gives a random number between 0 and 9
+
+
+
