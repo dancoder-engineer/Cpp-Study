@@ -28,7 +28,7 @@ class HighScores {
     int personal_best() {
         // TODO: Return the highest score for this session.
         std::vector<int> sortedScores = newSortedList();
-    return sortedScores.back();
+        return sortedScores.back();
 }
 
     std::vector<int> top_three() {

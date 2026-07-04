@@ -153,6 +153,7 @@ std::vector<int> ret;
 ret.push_back(5);
 v.insert(v.begin(), 6); //at the beginning
 v.insert(v.begin() + 2, 8); //at index 2
+sort(v.begin(), v.end())
 
 std::string str = std::to_string(num);
 std::array<int, 4> scores
@@ -225,3 +226,11 @@ ElectionResult& winning = final_count[0];
 tats a reference to final_count[0] that overwrotes final_count[0] whenever you change it
 
 best to only copy to reference ewhen you're about to return so you're not overwriting anything
+
+struct amount { int noodles; double sauce; };
+std::cout << "Noodles: " << needed.noodles << std::endl;
+std::cout << "Sauce: " << needed.sauce << std::endl;
+
+void addSecretIngredient(std::vector<std::string>& myList, const std::vector<std::string>& friendsList){ }
+the const stps the second from being modified
+
