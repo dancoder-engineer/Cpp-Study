@@ -1,3 +1,3 @@
 git add .
-git commit -am "Halwasy through the lasagna exercise."
+git commit -am "Halfway through the lasagna exercise."
 git push
