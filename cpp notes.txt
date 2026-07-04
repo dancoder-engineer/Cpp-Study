@@ -250,5 +250,13 @@ pillar_men_sensor* sensor_array
 this is a pointer to the first element of the array
 
 sum += (sensor_array + i)->activity;
-In C++, the -> operator is used to access members of an object through a pointer to that object.
+In C++, the -> operator is used to access members of an object through a pointer to that object,
+also this is pointer math, increasing the pointer and getting the activity from each
 
+If a function wants a pointer:
+void foo(std::vector<int>* p) { }
+
+you need to give it the vector's address:
+foo(&data);
+
+an array is already a pointer to the array's address, vector is not an address
