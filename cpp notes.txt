@@ -109,6 +109,10 @@ namespace targets {
 }  // namespace targets
 
 
+std::string name() const{ }
+makes sure the function doesnt modify the object
+
+
 
 
         try {
@@ -207,6 +211,8 @@ bits = std::bitset<8>(352);
 
 std::unordered_set<std::string> theirAllergies;
 theirAllergies.emplace(allergies[i]);
+theirAllergies.erase(oldName);
+theirAllergies.count("jh") — returns 1 if the element exists, otherwise 0 (since unordered_set stores unique elements).
 
 if in another file and declaring class member function, need to do this
 std::vector<int> HighScores::top_three() { }
@@ -260,3 +266,6 @@ you need to give it the vector's address:
 foo(&data);
 
 an array is already a pointer to the array's address, vector is not an address
+
+rand() % 10
+gives a random number between 0 and 9
