@@ -25,6 +25,18 @@ void addSecretIngredient(std::vector<std::string>& myList, const std::vector<std
     myList.back() = friendsList.back();
 }
 
+std::vector<double> scaleRecipe (const std::vector<double> originalAmounts, double factor){
+    std::vector<double> newAmounts;
+    for(double amount:originalAmounts){
+        newAmounts.push_back(amount * (factor / 2));
+    }
+    return newAmounts;
+}
+
+void addSecretIngredient(std::vector<std::string>& myList, const std::string& secretIngredient){
+    myList.back() = secretIngredient;
+}
+
 
 
 
@@ -44,6 +56,22 @@ int main(){
     std::cout << myList.back() << std::endl;
     addSecretIngredient(myList, friendsList);
     std::cout << myList.back() << std::endl;
+
+    std::vector<double> quantities{1.2, 3.6, 10.5};
+    for(double i:quantities) { std:: cout << i << " || "; }
+    std::cout << std::endl;
+    std::vector<double> uppedQuantities{scaleRecipe(quantities, 4)};
+    // => { 2.4, 7.2, 21 }
+    for(double i:uppedQuantities) { std:: cout << i << " || "; }
+    std::cout << std::endl;
+
+    std::vector<std::string> myList2{"noodles", "meat", "sauce", "mozzarella", "?"};
+    std::string secretIngredient{"spice melange"};
+    std::cout << myList2.back() << std::endl;
+    addSecretIngredient(myList2, secretIngredient);
+    std::cout << myList2.back() << std::endl;
+    // myList => {"noodles", "meat", "sauce", "mozzarella", "spice melange"}
+
     return 0;
 }
     

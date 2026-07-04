@@ -154,6 +154,7 @@ ret.push_back(5);
 v.insert(v.begin(), 6); //at the beginning
 v.insert(v.begin() + 2, 8); //at index 2
 sort(v.begin(), v.end())
+v.reserve(originalAmounts.size());
 
 std::string str = std::to_string(num);
 std::array<int, 4> scores
@@ -234,3 +235,5 @@ std::cout << "Sauce: " << needed.sauce << std::endl;
 void addSecretIngredient(std::vector<std::string>& myList, const std::vector<std::string>& friendsList){ }
 the const stps the second from being modified
 
+C++ only allows the default value once, usually in the declaration (the header).
+int preparationTime(std::vector<std::string> layers, int avgTime = 2);
