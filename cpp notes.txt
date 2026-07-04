@@ -237,3 +237,8 @@ the const stps the second from being modified
 
 C++ only allows the default value once, usually in the declaration (the header).
 int preparationTime(std::vector<std::string> layers, int avgTime = 2);
+
+
+
+bool connection_check(pillar_men_sensor* sensor)
+this is a pointer, using the *
