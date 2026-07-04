@@ -242,3 +242,13 @@ int preparationTime(std::vector<std::string> layers, int avgTime = 2);
 
 bool connection_check(pillar_men_sensor* sensor)
 this is a pointer, using the *
+
+return sensor == nullptr;
+pointers can be nullptr, null
+
+pillar_men_sensor* sensor_array
+this is a pointer to the first element of the array
+
+sum += (sensor_array + i)->activity;
+In C++, the -> operator is used to access members of an object through a pointer to that object.
+
