@@ -13,9 +13,8 @@ std::vector<long> splitIntoGroups(long num){
     return groups;
 }
 
-std::string oneToTen(int i){
-    std::array numNames = {
-        "zero",
+    std::array<std::string, 10> onesDigits = {
+        "",
         "one",
         "two",
         "three",
@@ -24,13 +23,11 @@ std::string oneToTen(int i){
         "six",
         "seven",
         "eight",
-        "nine",
+        "nine"
     };
-    return numNames[i];
-}
 
-std::string teens(int i){
-    std::array numNames = {
+
+    std::array<std::string, 10> teens = {
         "ten",
         "eleven",
         "twelve",
@@ -40,17 +37,64 @@ std::string teens(int i){
         "sixteen",
         "seventeen",
         "eighteen",
-        "nineteen",
+        "nineteen"
     };
-    return numNames[i % 10];
-}
+
+    std::array<std::string, 10> tensDigits = {
+        "",
+        "",
+        "twenty",
+        "thirty",
+        "forty",
+        "fifty",
+        "sixty",
+        "seventy",
+        "eighty",
+        "ninety"
+    };
+
+    std::string wordsFromArray(long num, std::array<std::string, 10>& words){
+        return words[num];
+    }
+
+    std::string makeWordsFromSections(long section){
+        std::string sectionWords = "";
+        int onesDigit = section % 10;
+        int tensDigit = (section % 100) / 10;
+        int hundredsDigit = section / 100;
+        if(section < 10) { sectionWords += wordsFromArray(section, onesDigits); }
+        else if(section >= 10 && section <= 19) { sectionWords += wordsFromArray(section % 10, teens); }
+        else if(section >= 20) { 
+            if(section >= 100){
+                sectionWords += wordsFromArray(section / 100, onesDigits);
+                sectionWords += " hundred";
+                if(section % 100 > 0) { sectionWords += " "; }
+            }
+
+            sectionWords += wordsFromArray((section % 100) / 10, tensDigits);
+            if(onesDigit > 0 && tensDigit > 0) {sectionWords += "-"; }
+            sectionWords += wordsFromArray(section % 10, onesDigits);
+        }
+
+        return sectionWords;
+    }
+
+    std::string makeWords(long num){
+
+        if(num == 0) { return "zero"; }
+        std::vector<long> nums = splitIntoGroups(num);
+
+        return makeWordsFromSections(nums[0]);
+        
+    }
+
 
 
 int main(){
 
-    std::vector<long> vect = splitIntoGroups(99999);
-    for(int i = 0; i < static_cast<int>(vect.size()); i++){
-        std::cout << vect[i] << "\n";
+
+    for(int i = 0; i <= 150; i++){
+        std::cout << makeWords(i) << "\n";
     }
 
  
