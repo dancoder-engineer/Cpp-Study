@@ -114,6 +114,14 @@ namespace targets {
 static is a variable shared across all instances, between class and main (or in cpp and not header file)
 std::unordered_set<std::string> alien::namesSet;
 
+chess_board(std::pair<int,int> white,
+            std::pair<int,int> black)
+    : whitePos(white), blackPos(black)
+{
+    ...
+}
+
+
 
 std::string name() const{ }
 makes sure the function doesnt modify the object
@@ -276,5 +284,9 @@ an array is already a pointer to the array's address, vector is not an address
 rand() % 10
 gives a random number between 0 and 9
 
+    std::pair<int, int> white = {0, 1};
+    std::cout << white.first << "\n";
+    std::cout << white.second << "\n";
 
+throw std::domain_error("Queens can not occupy the same square.");
 
