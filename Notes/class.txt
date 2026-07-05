@@ -1,0 +1,38 @@
+namespace targets {
+// TODO: Insert the code for the alien class here
+ class Alien{
+    public:
+        int x_coordinate;
+        int y_coordinate;
+    
+    
+    Alien(int x, int y){
+        x_coordinate = x;
+        y_coordinate = y;
+        health = 3;
+    }
+
+    int get_health(){
+        return health;
+    }
+
+    private:
+        int health;
+        static std::unordered_set<std::string> namesSet;
+    
+ };
+}  // namespace targets
+
+
+
+static is a variable shared across all instances, between class and main (or in cpp and not header file)
+Use it if there's either no object yet (if the function is creating one) or if
+it doesnt use anythng from the class itself (variables or fuctions)
+std::unordered_set<std::string> alien::namesSet;
+
+for converting class to other types, and bool == and bool != are separate
+operator std::string() const{ }
+bool operator==(const clock& other) const{ }
+bool operator!=(const clock& other) const{ }
+
+the const means it promises it wont modyfy this (the object itself)
