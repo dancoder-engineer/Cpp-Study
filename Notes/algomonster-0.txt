@@ -1,0 +1,51 @@
+ink of computer memory as a large workspace divided into two areas:
+
+The Stack: A fast, organized region for temporary data that follows strict rules (Last-In-First-Out)
+The Heap: A flexible region for data that needs to live longer or grow dynamically
+
+vector<int> list2 = list1;    // copy constructor creates new vector
+
+
+Avoiding Quadratic Time
+Common strategies to avoid O(n²):
+
+Use better data structures:
+
+Hash tables give O(1) lookup instead of O(n) search
+For duplicate detection: Use a set instead of nested loops
+Sort first, then use efficient algorithms:
+
+Sorting is O(n log n), which is much better than O(n²)
+After sorting, many problems become O(n)
+Use two-pointer technique:
+
+For some problems, two pointers moving through a sorted array can replace nested loops
+Look for mathematical patterns:
+
+Sometimes there's a formula to compute the answer directly
+
+We'll learn these techniques in later modules!
+
+
+
+
+Key Takeaways
+Best case: Minimum operations for luckiest input (often O(1) for searches)
+Worst case: Maximum operations for hardest input (what Big-O usually refers to)
+Average case: Expected operations across typical inputs (often similar to worst case)
+We focus on worst case because it provides guarantees and is often realistic
+Some algorithms (like finding min/max) have identical performance for all cases
+Early termination algorithms (like linear search) show case differences
+Understanding these cases helps you predict real-world performance and set realistic expectations for your code.
+
+
+Key Takeaways
+Space complexity measures auxiliary memory usage (beyond the input)
+O(1) space: Constant memory - in-place algorithms
+O(n) space: Linear memory - new array/list proportional to input
+O(n²) space: Quadratic memory - matrices and 2D structures
+Space-time trade-offs: Often can exchange memory for speed
+Both matter: Fast algorithms that use too much memory can fail
+Analyze both: Consider time AND space when evaluating algorithms
+With a solid understanding of both time and space complexity, you're ready to dive into specific data structures and see how they achieve different trade-offs.
+

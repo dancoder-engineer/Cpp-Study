@@ -141,23 +141,7 @@ in .h file, put the WHOLE enum and the WHOLE class, dont even bother declaring i
 
 
 
-std::vector<int> ret;
-ret.push_back(5);
-v.insert(v.begin(), 6); //at the beginning
-v.insert(v.begin() + 2, 8); //at index 2
-sort(v.begin(), v.end())
-v.reserve(originalAmounts.size());
 
-std::string str = std::to_string(num);
-std::array<int, 4> scores
-
-
-better std::vector<int> round_down_scores(std::vector<double>& student_snmcores)
-so you dont copy the whole vector
-
-std::vector<int> zeros(10);      // 10 zeros
-std::vector<int> fives(10, 5);   // 10 fives
-std::vector<char> letters(4, 'A'); // {'A', 'A', 'A', 'A'}
 
 #include <unordered_map>
 
@@ -264,3 +248,27 @@ gives a random number between 0 and 9
 
 throw std::domain_error("Queens can not occupy the same square.");
 
+
+
+for a vector to be any type, you can on the line right before the function do this
+template <typename T>
+
+then use it in a function like this
+void append (std::vector<T> vec1, std::vector<T> vec2){ }
+
+in order to take a lambda function:
+template <typename T, typename Predicate>
+std::vector<T>& map(std::vector<T>& vec, Predicate func){ }
+
+    auto lambda_func = [](int x) { return x % 2 == 1; };
+
+can call that function withstd::vector<int> numbers{1, 3, 5, 7};
+
+auto addOne = [](int x) {
+    return x + 1;
+};
+
+auto result = map(numbers, addOne);
+
+If this is a string, you can do this since strings are containers:
+sort(s.begin(), s.end());

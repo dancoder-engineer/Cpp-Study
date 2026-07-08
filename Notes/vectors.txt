@@ -1,0 +1,32 @@
+
+std::vector<int> ret;
+ret.push_back(5);
+v.insert(v.begin(), 6); //at the beginning
+v.insert(v.begin() + 2, 8); //at index 2
+nums.erase(nums.begin() + i)
+sort(v.begin(), v.end())
+v.reserve(originalAmounts.size());
+
+std::string str = std::to_string(num);
+std::array<int, 4> scores
+
+
+better std::vector<int> round_down_scores(std::vector<double>& student_snmcores)
+so you dont copy the whole vector
+
+std::vector<int> zeros(10);      // 10 zeros
+std::vector<int> fives(10, 5);   // 10 fives
+std::vector<char> letters(4, 'A'); // {'A', 'A', 'A', 'A'}
+
+
+numbers.insert(numbers.begin() + 2, 99);
+
+
+The Swap-and-Pop Trick
+If you don't care about order, you can delete in O(1):
+
+# Instead of: arr.remove(index)  // O(n)
+# Do this:
+arr[index] = arr[-1]  # Swap with last element
+arr.pop()             # Remove last element (O(1))
+This avoids all shifting!
