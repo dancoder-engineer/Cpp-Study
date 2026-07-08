@@ -1,0 +1,53 @@
+struct Node {
+    int data;
+    Node* next;
+
+    Node(int data) : data(data), next(nullptr) {}
+};
+
+// Creating three nodes
+Node* head = new Node(1);
+Node* second = new Node(2);
+Node* third = new Node(3);
+
+// Linking them together
+head->next = second;
+second->next = third;
+
+
+in JavaScript nullptr is null
+in Python it's None
+
+
+
+
+how to traverse:
+void traverse(Node* head) {
+    Node* current = head;
+    while (current != nullptr) {
+        cout << current->data << endl;
+        current = current->next;
+    }
+}
+
+
+if it's a template
+Node<int>* newHead = new Node<int>(value);
+
+For linked lists, always have a special case for an empty list (if head == nullptr)
+
+Can check current->next->data so dont have to always use currentNode
+
+
+
+need to delete skipped nodes to free up memory
+        if(currentNode->next->val == value){
+                    Node<int>* next = currentNode->next;
+                    currentNode->next = currentNode->next->next;
+                    next->next = nullptr;
+                    delete next;
+                    return head;
+        }
+
+have to make it into its own variable, and also need to make its next a nullptr or else the rest of the list will be
+recursively deleted.
