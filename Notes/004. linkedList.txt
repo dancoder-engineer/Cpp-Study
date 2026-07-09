@@ -63,10 +63,45 @@ Memory overhead matters (lists use 2-3 times more)
 You need binary search (requires sorting and random access)
 The size is fixed or grows predictably at the end
 When to Choose Linked Lists
-Use linked lists when:
 
+Use linked lists when:
 You frequently insert or delete at the beginning
 Size varies dramatically and unpredictably
 You can't allocate contiguous memory for large arrays
 You maintain pointers to nodes for quick modification
 You're building more complex structures (trees, graphs use node-based designs)
+
+
+
+template<typename T>
+struct Node {
+    T val;
+    Node<T>* next;
+
+    explicit Node(T val, Node<T>* next = nullptr)
+        : val{val}, next{next} {}
+
+    ~Node() {
+        delete next;
+    }
+};
+
+
+
+python:
+from collections import deque
+
+# Python's deque handles all the complexity
+queue = deque()
+
+# Enqueue items
+queue.append("Task 1")
+queue.append("Task 2")
+queue.append("Task 3")
+
+# Dequeue items
+first = queue.popleft()   # "Task 1"
+second = queue.popleft()  # "Task 2"
+
+# Check size
+print(len(queue))         # 1
