@@ -272,3 +272,18 @@ auto result = map(numbers, addOne);
 
 If this is a string, you can do this since strings are containers:
 sort(s.begin(), s.end());
+
+
+
+queue
+
+std::queue<int> q;
+
+q.push("a") inserts
+
+std::string first = q.front();   // Get front
+q.pop();                         // Remove it
+
+q.front()
+int size = q.size();
+bool isEmpty = q.empty();

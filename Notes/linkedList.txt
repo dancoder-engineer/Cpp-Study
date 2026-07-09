@@ -51,3 +51,22 @@ need to delete skipped nodes to free up memory
 
 have to make it into its own variable, and also need to make its next a nullptr or else the rest of the list will be
 recursively deleted.
+
+reversing a doubly linked list (has value, prev, and next) reverse prev and next for each
+
+When to Choose Arrays
+Use arrays when:
+
+You need to access elements by index frequently
+You're accessing elements sequentially (cache helps)
+Memory overhead matters (lists use 2-3 times more)
+You need binary search (requires sorting and random access)
+The size is fixed or grows predictably at the end
+When to Choose Linked Lists
+Use linked lists when:
+
+You frequently insert or delete at the beginning
+Size varies dramatically and unpredictably
+You can't allocate contiguous memory for large arrays
+You maintain pointers to nodes for quick modification
+You're building more complex structures (trees, graphs use node-based designs)

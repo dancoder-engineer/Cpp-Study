@@ -27,7 +27,8 @@ std::string compress_string(std::string s) {
 
 int main(){
     
-    std::cout << compress_string("aaabbc") << "\n";
+    std::string a = "push 20";
+    std::cout << a.substr(5);
 
 
     return 0;
