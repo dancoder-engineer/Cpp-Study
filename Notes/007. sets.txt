@@ -1,0 +1,54 @@
+
+c++
+std::unordered_set<int> numbers;
+numbers.insert(2); // Add elements (duplicates ignored)
+if (numbers.find(2) != numbers.end()) { } // Check membership - O(1)
+numbers.erase(2); // Remove element
+
+// Union
+std::unordered_set<int> u = a;
+u.insert(b.begin(), b.end());  // {1, 2, 3, 4}
+
+// Intersection (manual)
+std::unordered_set<int> intersect;
+for (int x : a) {
+    if (b.find(x) != b.end()) {
+        intersect.insert(x);  // {2, 3}
+    }
+}
+
+// Difference (manual)
+std::unordered_set<int> diff;
+for (int x : a) {
+    if (b.find(x) == b.end()) {
+        diff.insert(x);  // {1}
+    }
+
+
+
+find(...) != end() → Found
+find(...) == end() → Not found
+
+
+
+python
+numbers = set() # Create empty set
+numbers.add(2) # Add elements (duplicates ignored)
+print(numbers)  # {1, 2, 3}
+if 2 in numbers: # Check membership - O(1)
+numbers.remove(2) # Remove element
+
+print(a | b)  # Union - all elements
+print(a & b)  # Intersection - common elements
+print(a - b)  # Difference - in a but not b
+
+javascript
+let numbers = new Set(); // Create empty set
+numbers.add(2); // Add elements (duplicates ignored)
+console.log(numbers);  // Set {1, 2, 3}
+if (numbers.has(2)) { } // Check membership - O(1)
+numbers.delete(2); // Remove element
+
+let union = new Set([...a, ...b]);
+let intersection = new Set([...a].filter(x => b.has(x)));console.log(intersection);  // Set {2, 3}
+let difference = new Set([...a].filter(x => !b.has(x)));console.log(difference);  // Set {1}

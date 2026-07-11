@@ -9,6 +9,11 @@ q.front()
 int size = q.size();
 bool isEmpty = q.empty();
 
+
+
+
+
+
 python:
 from collections import deque
 

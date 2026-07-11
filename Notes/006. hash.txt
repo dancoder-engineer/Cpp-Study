@@ -1,0 +1,119 @@
+/ C++ std::hash
+std::string key = "Alice";
+std::hash<std::string> hasher;
+size_t hashCode = hasher(key);
+std::cout << hashCode << std::endl;  // Large number
+
+// Convert to array index
+int capacity = 10;
+int index = hashCode % capacity;  // Index between 0-9
+
+
+
+python:
+hash_code = hash(key)
+
+
+
+
+polynomials are good for has because positions of characters matter
+
+prime table sizes are good because it ensures every insdex gets used
+
+store linked lists in slots so can easily handle if more than one is has the same hash
+
+
+
+
+
+
+#include <unordered_map>
+#include <string>
+#include <iostream>
+
+// Create empty hash table
+std::unordered_map<std::string, std::string> phoneBook;
+
+// Insert key-value pairs
+phoneBook["Alice"] = "555-1234";
+phoneBook["Bob"] = "555-5678";
+phoneBook["Carol"] = "555-9012";
+
+// Lookup by key
+std::cout << phoneBook["Alice"] << std::endl;  // "555-1234"
+
+// Check if key exists
+if (phoneBook.find("Bob") != phoneBook.end()) {
+    std::cout << "Found Bob" << std::endl;
+}
+
+// Delete a key
+phoneBook.erase("Carol");
+
+
+
+
+
+
+
+
+In JavaScript
+// Create empty hash table
+let phoneBook = new Map();
+
+// Insert key-value pairs
+phoneBook.set("Alice", "555-1234");
+phoneBook.set("Bob", "555-5678");
+phoneBook.set("Carol", "555-9012");
+
+// Lookup by key
+console.log(phoneBook.get("Alice"));  // "555-1234"
+
+// Check if key exists
+if (phoneBook.has("Bob")) {
+    console.log("Found Bob");
+}
+
+// Delete a key
+phoneBook.delete("Carol");
+
+// Get with default
+let number = phoneBook.get("Dave") || "Not found";
+
+Use an object ({}) when:
+
+You're representing an object with named properties.
+The keys are known strings.
+Example:
+let student = {
+    name: "Alice",
+    age: 20,
+    major: "CS"
+};
+
+Use a Map when:
+
+You're building a dictionary or lookup table.
+Keys are added and removed dynamically.
+Keys might not be strings.
+You need frequent iteration or the number of entries.
+
+For your phone book example, either works. Modern JavaScript developers generally
+prefer a Map for true lookup tables, while they use plain objects to model structured data.
+
+
+
+
+
+
+Iterating:
+
+c++
+for (const auto& [name, number] : phoneBook) { }
+
+python:
+for name, number in phone_book.items():
+
+javascript:
+for (let [name, number] of phoneBook) { }
+phoneBook.forEach((number, name) => { }

@@ -1,0 +1,21 @@
+#include <stack>
+
+// Using C++ stack
+std::stack<int> stack;
+
+// Push elements
+stack.push(10);
+stack.push(20);
+stack.push(30);
+// Stack: [10, 20, 30] (30 is on top)
+
+// Pop element
+int top = stack.top();  // Get top value (30)
+stack.pop();            // Remove it
+// Stack: [10, 20]
+
+// Peek at top
+if (!stack.empty()) {
+    int topElement = stack.top();  // Returns 20
+
+

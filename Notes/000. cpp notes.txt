@@ -46,6 +46,7 @@ std::string msg{ std::to_string(num) + " can also be written as " + std::to_stri
 // => 92 can also be written as 92.0000000
 
 std::string s = std::format("My name is {} and I am {}.", name, age);
+std::reverse(result.begin(), result.end());
 
 
 cmath::ceil(2.3)
@@ -274,16 +275,3 @@ If this is a string, you can do this since strings are containers:
 sort(s.begin(), s.end());
 
 
-
-queue
-
-std::queue<int> q;
-
-q.push("a") inserts
-
-std::string first = q.front();   // Get front
-q.pop();                         // Remove it
-
-q.front()
-int size = q.size();
-bool isEmpty = q.empty();

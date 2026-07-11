@@ -1,0 +1,21 @@
+bool found = std::binary_search(sorted.begin(), sorted.end(), 73);
+
+insertion sort requires a special case for inserting when the element is bigger than everything because needs push_back
+
+std::sort(products.begin(), products.end(),
+    [](const Product& a, const Product& b) {
+        return a.rating > b.rating;
+    }
+);
+
+// Sort by multiple criteria: price, then rating
+std::sort(products.begin(), products.end(),
+    [](const Product& a, const Product& b) {
+        if (a.price != b.price) {
+            return a.price < b.price;
+        }
+        return a.rating > b.rating;
+    }
+);
+
+std::sort(arr.begin(), arr.end(), [](const int a, const int b){ return a < b; });

@@ -88,20 +88,3 @@ struct Node {
 
 
 
-python:
-from collections import deque
-
-# Python's deque handles all the complexity
-queue = deque()
-
-# Enqueue items
-queue.append("Task 1")
-queue.append("Task 2")
-queue.append("Task 3")
-
-# Dequeue items
-first = queue.popleft()   # "Task 1"
-second = queue.popleft()  # "Task 2"
-
-# Check size
-print(len(queue))         # 1
