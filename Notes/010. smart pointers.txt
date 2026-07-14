@@ -1,0 +1,27 @@
+inique_ptr<int>unPtr1 = make_unique(25);
+
+use *unPtr1 to dereference and get value
+
+unique_ptr<int>unPtr2 = move(unPtr1)
+unPtr1 would become nullptr
+
+
+
+std::unique_ptr<artifact>possession;
+posession = std::make_unique<artifact>(item);
+hmn.possession = std::make_unique<artifact>(item);
+std::swap(ptr1, ptr2);
+can only swap REFERECES though
+
+
+
+
+
+shared_ptr<int>shPtr1 = makeShared()<int>(25);
+shared_ptr<myClass>shPtr1 = makeShared<myClass>();
+shPtr1.use_count();
+shared_ptr<myClass>shPtr2 = shPtr1;
+
+weak pointers dont keep onbject alive, if out of scope of original, it stops existing
+weak_ptr<int> wePtr1;
+

@@ -15,6 +15,10 @@ find(...) == end() → Not found
 std::string str = std::to_string(num);
 std::array<int, 4> scores
 
+    std::sort(s.begin(), s.end(), [&chars](const auto& a, const auto& b){
+        if((chars[a] != chars[b])) { return chars[a] > chars[b]; }
+        return a < b;
+    });
 
 better std::vector<int> round_down_scores(std::vector<double>& student_snmcores)
 so you dont copy the whole vector

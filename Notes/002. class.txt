@@ -12,6 +12,10 @@ namespace targets {
         health = 3;
     }
 
+    ~Alien() {
+        //this is a destructor
+    }
+
     int get_health(){
         return health;
     }
